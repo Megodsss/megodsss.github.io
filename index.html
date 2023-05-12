@@ -1,0 +1,357 @@
+<html class="light" style="color-scheme: light;">
+    <head>
+        <link rel="icon" href="favicon.png" />
+        <title>Megods</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            
+            .wrap {
+                    width: 900px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                }
+
+                .wrap img {
+                    width:60%; height:auto
+                }
+
+            .papertop {
+                width: 100vw; /* 부모 요소의 너비를 100%로 설정 */
+                height: auto;
+                object-fit: cover;
+            }
+
+            .scrolling-wrapper {
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                
+            }
+
+            .scrolling-wrapper .image {
+                display: inline-block;
+                vertical-align: top;
+                width: 200px; /* 원하는 이미지 폭으로 조정하세요 */
+                height: 200px; /* 원하는 이미지 높이로 조정하세요 */
+                margin-right: 20px;
+                margin-bottom: 20px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border: 2px solid black;
+
+            }
+
+            .outer-wrapper {
+                padding: 0 10vw; /* 양옆에 200px 여백 추가 */
+                background-color: #F8F9FA;
+            }
+
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-button {
+                display: none;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: transparent; /* 기본적으로 스크롤바를 투명하게 설정 */
+            }
+            .scrolling-wrapper:hover::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.3); /* 마우스 오버시에만 스크롤바 색상 변경 */
+                border-radius: 0px;
+            }
+
+            footer {
+                height: 250px;
+                padding: 0 10vw;
+                border-top: 1px solid #000;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;  /* 추가된 부분 */
+            }
+
+            .item img {
+                width: 150px;
+                height: 50px;
+            }
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                max-width: 300px;  /* 추가된 부분 */
+            }
+
+            .item1 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                max-width: 300px;  /* 추가된 부분 */
+            }
+
+            .text {
+                font-size: 16px;
+                font-family: 'Circular TD', sans-serif;
+                font-weight: 500;
+                line-height: 24px;
+            }
+
+            .text1 {
+                font-size: 24px;
+                font-family: 'Circular TD', sans-serif;
+                font-weight: 500;
+                line-height: 24px;
+            }
+
+            .text2 {
+                font-size: 12px;
+                font-family: 'Circular TD', sans-serif;
+                font-weight: 500;
+                line-height: 24px;
+            }
+
+            .item:last-child .text {
+                font-size: 14px;
+            }
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width:80vw;
+                padding: 0 10vw; /* 너비의 90%를 사용하도록 좌우 패딩을 5vw로 설정 */
+                height: 72px;
+                border-bottom: 1px solid gray;
+            }
+
+            .navbar-logo {
+                width: 48px;
+                height: 48px;
+                position: absolute; /* logo를 absolute로 설정하여 항목들이 중앙으로 올 수 있도록 합니다. */
+                left: 5vw; /* 로고가 좌측에서 5vw 떨어진 위치에 있도록 설정합니다. */
+            }
+
+            .navbar-items {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .navbar-item {
+                display: flex;
+                align-items: center;
+                margin: 0 15px;
+            }
+
+            .navbar-item span {
+                font-family: 'Circular Std', sans-serif;
+                font-size: 16px;
+                line-height: 24px;
+                text-decoration: none solid rgb(29, 29, 31);
+            }
+
+            .navbar-icon {
+                width: 32px;
+                height: 32px;
+                margin-right: 5px;
+            }
+
+            .rounded-button {
+                margin-top : 50px;
+                font-family: 'Arial', sans-serif; /* 임의의 폰트를 설정합니다. 원하는 폰트로 변경할 수 있습니다. */
+                font-size: 20px;
+                background-color: black; /* 배경색을 검은색으로 설정합니다. */
+                color: white; /* 글씨 색을 흰색으로 설정합니다. */
+                border: none; /* 테두리를 없앱니다. */
+                padding: 15px 50px; /* 버튼 내부의 패딩을 설정합니다. 이 값을 조절하여 버튼의 크기를 변경할 수 있습니다. */
+                border-radius: 10px; /* 모서리를 둥글게 만듭니다. 이 값은 픽셀 단위로, 더 둥글게 하려면 값을 늘리고, 덜 둥글게 하려면 값을 줄입니다. */
+                cursor: pointer; /* 마우스 커서가 버튼 위에 있을 때 포인터 모양으로 바뀌게 합니다. */
+                font-weight: 600;
+            }
+
+            .text-white {
+                color: white;
+            }
+
+            .text-orange {
+                color: orange;
+            }
+            
+        </style>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Nav bar</title>
+            <link rel="stylesheet" href="style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/b17d4fa9e7.js" crossorigin="anonymous"></script>
+            <script src="main.js" defer></script>
+    </head>
+
+<body>
+    <!-- 상단 nav  -->
+    <div class="navbar">
+        <img src="favicon.png" alt="favicon" class="navbar-logo">
+        <div class="navbar-items">
+          <div class="navbar-item">
+            <img src="Staking.jpg" alt="icon1" class="navbar-icon">
+            <span>Staking</span>
+          </div>
+          <div class="navbar-item">
+            <img src="Migration.jpg" alt="icon2" class="navbar-icon">
+            <span>Migration</span>
+          </div>
+          <div class="navbar-item">
+            <img src="Explorer.jpg" alt="icon3" class="navbar-icon">
+            <span>Explorer</span>
+          </div>
+          <div class="navbar-item">
+            <img src="Clubs.jpg" alt="icon4" class="navbar-icon">
+            <span>Clubs</span>
+          </div>
+          <div class="navbar-item">
+            <img src="Events.jpg" alt="icon5" class="navbar-icon">
+            <span>Events</span>
+          </div>
+          <div class="navbar-item">
+            <img src="More.jpg" alt="icon6" class="navbar-icon">
+            <span>More</span>
+          </div>
+        </div>
+        <hr class="navbar-line">
+      </div>
+
+    <!-- megods 이미지 및 텍스트 박스 가운데 정렬 하는 div 설정 -->
+    <div class = "wrap" style = "margin-bottom: 200px; margin-top: 110px;">
+        <!-- degods 이미지 설정 -->
+        <div>
+            <img src="./megods.jpg" alt="logo" loading="lazy">
+        </div>
+
+        <!-- #1 NFT 텍스트 -->
+        <div style = "font: circular-std; font-size: 40px ; font-weight: 520; line-height:40px ; text-decoration: none solid rgb (29,29,31); word-spacing: 0px; ">
+            The #1 Meme NFT community on the Solana.
+        </div>
+
+        <!-- Coming Soon Button-->
+
+        <button class="rounded-button">
+            <span class="text-white">Minting</span>
+            <span class="text-orange">Soon!</span>
+        </button>
+    </div>
+
+    <!-- 종이 위쪽 찢어진 그림 만들기-->
+    <div class = "papertop">
+        <img src="./paper_top_light.png" alt="logo" style = "width:100vw;" loading="lazy">
+    </div>
+
+    <!-- fucked up textbox-->
+    <div style = "background-color: #F8F9FA; height : 200px ; width: 100% ; position : relative; padding-top:100px;" >
+        <div class = "wrap" style = "font: circular-std; font-size: 36px ; font-weight: 500; line-height:50px ; text-decoration: none solid rgb (29,29,31); word-spacing: 0px; ">
+            We fucked up and made meme art <br>
+            instead of another derivative.
+        </div>
+    </div>
+    
+    <!-- 가로 스크롤 형식으로 디자인 보기 -->
+    <div class = "outer-wrapper">
+        <div class="scrolling-wrapper">
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+            <div class="image" style="background-image: url('megods.jpg');"></div>
+        </div>
+    </div>
+
+    <!-- 종이 아래쪽 찢어진 그림 만들기-->
+    <div class = "papertop" style = "margin-bottom:100px;">
+        <img src="./paper_bottom_light.png" alt="logo" style = "width:100vw;" loading="lazy">
+    </div>
+
+    <!-- Our Commnuity is global - Every city in the world-->
+    <div class = "wrap" style = "margin-bottom: 150px;">
+        
+        <!-- #1 NFT 텍스트 -->
+        <div style = "font: circular-std; font-size: 30px ; font-weight: 500; line-height:40px ; text-decoration: none solid rgb (29,29,31); word-spacing: 0px; margin-bottom : 50px;">
+            Our Community is global - Every city in the world
+        </div>
+        
+        <!-- Global community 이미지 설정 -->
+        <div>
+            <img src="./global.png" alt="logo" loading="lazy">
+        </div>
+
+    </div>
+
+    <!-- 종이 위쪽 찢어진 그림 만들기-->
+    <div class = "papertop">
+        <img src="./paper_top_light.png" alt="logo" style = "width:100vw;" loading="lazy">
+    </div>
+
+    <!-- 종이 아래쪽 찢어진 그림 만들기-->
+    <div class = "papertop" style = "margin-bottom:100px;">
+        <img src="./paper_bottom_light.png" alt="logo" style = "width:100vw;" loading="lazy">
+    </div>
+
+    <!-- We tried some ~ 텍스트 박스 -->
+    <div class = "wrap">
+        <div style = "font: circular-std; font-size: 24px ; font-weight: 501; line-height:32px ; text-decoration: none solid rgb (29,29,31); word-spacing: 0px; margin-bottom: 100px">
+            We tried some meme. <br>
+            We learned some meme. <br>
+            Now we're trying some new meme. <br>
+        </div>
+    </div>
+
+    <!-- 하단  -->
+    <footer>
+        <div class="footer-content">
+            <div class="item">
+                <img src="./megods.jpg" alt="Image 1">
+                <p class="text"> MeGods is a digital art collection and 
+                    global community of creators, developers, 
+                    especially for solana degen users.</p>
+            </div>
+            <div class="item">
+                <p class="text1">Follow Us</p>
+                <div class = "item1">
+                    <a href="https://discord.com/" target="_blank">
+                        <i class ='fab fa-discord' style = "color : black; font-size:28px ; margin-right:19px;"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <i class ='fab fa-twitter' style = "color : black; font-size:28px ; margin-right:19px;"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank">
+                        <i class ='fab fa-instagram' style = "color : black; font-size:28px ;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <p class="text2">Copyright © 2023. Made with ♥ by Megods</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
